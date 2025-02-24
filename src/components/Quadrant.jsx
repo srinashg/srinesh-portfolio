@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Quadrant.css'; // Import Quadrant-specific CSS
 
-const Quadrant = ({ color, section }) => {
+const Quadrant = ({ color, section, quadrantPosition }) => {
   const [isHovered, setIsHovered] = useState(false);
   const navigate = useNavigate();
 
   const baseStyle = {
-    width: '100%',
-    height: '200px', /* Adjust height as needed */
-    border: '2px solid white',
     backgroundColor: 'darkgray',
     cursor: 'pointer',
     display: 'flex',
@@ -16,7 +14,7 @@ const Quadrant = ({ color, section }) => {
     alignItems: 'center',
     fontSize: '24px',
     fontWeight: 'bold',
-    boxSizing: 'border-box', /* Include padding and border in element's total width and height */
+    boxSizing: 'border-box',
   };
 
   const hoveredStyle = {
@@ -30,6 +28,7 @@ const Quadrant = ({ color, section }) => {
 
   return (
     <div
+      className={`quadrant ${quadrantPosition}`} // Add quadrantPosition as class
       style={isHovered ? hoveredStyle : baseStyle}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

@@ -1,0 +1,36 @@
+.quadrant {
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    border: 2px solid white;
+    border-radius: 50% 0 0 0; /* Top-left quadrant */
+    overflow: hidden; /* Clip content within rounded borders */
+    box-sizing: border-box; /* Include padding and border in element's total width and height */
+    user-select: none; /* Prevent text selection on hover */
+  }
+  
+  .quadrant.top-left {
+    top: 0;
+    left: 0;
+    border-radius: 100% 0 0 0;
+  }
+  
+  .quadrant.top-right {
+    top: 0;
+    right: 0;
+    border-radius: 0 100% 0 0;
+  }
+  
+  .quadrant.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-radius: 0 0 0 100%;
+  }
+  
+  .quadrant.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 100% 0;
+  }
+  
+  /* Adjust font size for smaller screens if needed in media queries */

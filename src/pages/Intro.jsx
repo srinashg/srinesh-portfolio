@@ -9,9 +9,10 @@ const Intro = () => {
       <div className = "bg-gray-800 text-white p-6 rounded-lg shadow-lg max-w-lg mx-auto">
         <p>
           Hi! I'm Srinesh. I'm currently a senior at The University of Texas at Dallas studying Software Engineering.
-          I'm passionate about learning the inner and outer workings of software applications. I've taken on 2 Software Engineering internships
-          under my belt, and have worked on several projects. I'm excited to continue learning and growing in this field.
+          I'm passionate about full-stack software development, cloud computing, amd AI. I've previously taken on 2 Software Engineering
+          internships and worked on several projects, where I explored the inner workings of various applications.
         </p>
+        <p>I'm looking forward to continuing to learn and grow in this exciting, ever-evolving field of software engineering.</p>
       </div>
 
       <NavigationBar />
