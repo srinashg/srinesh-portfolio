@@ -1,0 +1,16 @@
+.intro-page {
+    background-color: #f0f0f0; /* Light gray background - you can change this */
+    min-height: 100vh; /* Ensure full viewport height */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center horizontally */
+    justify-content: center; /* Center vertically */
+    padding: 20px;
+    text-align: center; /* Center align text within the page */
+  }
+  
+  .intro-page h1,
+  .intro-page p,
+  .intro-page button {
+    text-align: center; /* Ensure text elements are centered */
+  }

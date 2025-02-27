@@ -1,0 +1,16 @@
+.contact-page {
+    background-color: #c0c0c0; /* Lightest gray */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .contact-page h1,
+  .contact-page p,
+  .contact-page button {
+    text-align: center;
+  }

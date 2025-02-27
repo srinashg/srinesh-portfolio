@@ -1,0 +1,16 @@
+.skills-page {
+    background-color: #d3d3d3; /* Another shade of gray */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .skills-page h1,
+  .skills-page p,
+  .skills-page button {
+    text-align: center;
+  }

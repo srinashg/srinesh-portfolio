@@ -1,0 +1,16 @@
+.work-page {
+    background-color: #e8e8e8; /* Slightly lighter gray - change as desired */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .work-page h1,
+  .work-page p,
+  .work-page button {
+    text-align: center;
+  }

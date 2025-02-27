@@ -1,6 +1,6 @@
 import React from 'react';
 import Quadrant from '../components/Quadrant';
-import './Homepage.css';
+import './styles/Homepage.css';
 
 const Homepage = () => {
   return (

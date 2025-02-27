@@ -29,9 +29,9 @@ const NavigationBar = () => {
   };
 
   return (
-    <div style={{ display: 'flex', justifyContent: 'space-around', margin: '20px 0' }}>
+    <div style={{ display: 'flex', justifyContent: 'center', margin: '20px 0' }}> {/* Center buttons */}
       <button onClick={goToPrevious} disabled={currentSectionIndex <= 0}>Previous</button>
-      <button onClick={goToHomepage}>Homepage</button>
+      <button onClick={goToHomepage} style={{ margin: '0 10px' }}>Homepage</button> {/* Add spacing between buttons */}
       <button onClick={goToNext} disabled={currentSectionIndex >= sections.length - 1}>Next</button>
     </div>
   );

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './Quadrant.css'; // Import Quadrant-specific CSS
+import './styles/Quadrant.css'; // Import Quadrant-specific CSS
 
 const Quadrant = ({ color, section, quadrantPosition }) => {
   const [isHovered, setIsHovered] = useState(false);
