@@ -1,14 +1,31 @@
 .homepage-container {
+  position: relative; /* Needed for absolute positioning of ::before */
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Make homepage take full viewport height */
+  height: 100vh; /* Ensure full viewport height */
+  overflow: hidden; /* Prevent content from overflowing background */
+}
+
+.homepage-container::before {
+  content: "";
+  position: fixed; /* Fixed position to cover viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/canyon-dusk.jpg'); /* Background image for homepage */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.6; /* Adjust opacity here */
+  z-index: -1; /* Places it behind the content */
 }
 
 .simon-container {
   position: relative; /* For positioning center text */
-  width: 455px; /* Increased by ~30% from 350px */
-  height: 455px; /* Increased by ~30% from 350px */
+  width: 455px;
+  height: 455px;
 }
 
 .center-text {
@@ -16,47 +33,46 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* Text color */
+  color: white; /* Text color - adjust if needed */
   text-align: center;
-  user-select: none; /* Prevent text selection on hover */
-  background-color: black; /* Add black background */
-  padding: 20px 32.5px; /* Adjusted padding - increased by ~30% from 15px and 25px */
-  border-radius: 10px; /* Optional: Add rounded corners to the box */
-  line-height: 1.2; /* Adjust line height for better spacing between lines */
-  display: flex; /* Use flexbox to control layout */
-  flex-direction: column; /* Stack items vertically */
-  justify-content: center; /* Center content vertically */
+  user-select: none;
+  background-color: black; /* Black box opacity set to 100% */
+  padding: 20px 32.5px;
+  border-radius: 10px;
+  line-height: 1.2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
-.center-text div:first-child { /* Style for "Srinesh Ganesh" */
-  font-size: 31px; /* Increased by ~30% from 24px */
-  font-weight: bold; /* Make name bold */
-  white-space: nowrap; /* Ensure text stays on one line */
-  margin-bottom: 5px; /* Add space below name */
+.center-text div:first-child {
+  font-size: 31px;
+  font-weight: bold;
+  white-space: nowrap;
+  margin-bottom: 5px;
 }
 
-.center-text div:last-child { /* Style for "Software Engineer" */
-  font-size: 18px; /* Increased by ~30% from 14px */
-  white-space: nowrap; /* Ensure text stays on one line (though it should by default) */
-  margin-top: 0; /* Reset default top margin if any */
+.center-text div:last-child {
+  font-size: 18px;
+  white-space: nowrap;
+  margin-top: 0;
 }
-
 
 @media (max-width: 767px) { /* Mobile styles */
   .simon-container {
-    width: 90vw; /* Keep mobile width as a percentage of viewport width */
-    height: 90vw; /* Keep it square on mobile */
+    width: 90vw;
+    height: 90vw;
   }
 
   .center-text {
-    padding: 13px 20px; /* Adjusted padding for mobile - increased by ~30% from 10px and 15px */
+    padding: 13px 20px;
   }
 
   .center-text div:first-child {
-    font-size: 26px; /* Adjusted font size for mobile - increased by ~30% from 20px */
+    font-size: 26px;
   }
 
   .center-text div:last-child {
-    font-size: 15px; /* Adjusted font size for mobile - increased by ~30% from 12px */
+    font-size: 15px;
   }
 }

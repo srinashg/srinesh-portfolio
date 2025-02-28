@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from '../components/NavigationBar';
-import './styles/Work.css'; // Import CSS for Work page
+import '../styles/Work.css'; // Import CSS for Work page
 
 const Work = () => {
   return (

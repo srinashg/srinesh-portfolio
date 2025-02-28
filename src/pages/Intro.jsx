@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from '../components/NavigationBar';
-import './styles/Intro.css'; // Import CSS for Intro page
+import '../styles/Intro.css'; // Import CSS for Intro page
 
 const Intro = () => {
   return (

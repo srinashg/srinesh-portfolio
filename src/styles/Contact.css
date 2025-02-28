@@ -1,16 +1,33 @@
 .contact-page {
-    background-color: #c0c0c0; /* Lightest gray */
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .contact-page h1,
-  .contact-page p,
-  .contact-page button {
-    text-align: center;
-  }
+  position: relative; /* Needed for absolute positioning of ::before */
+  height: 100vh; /* Ensure full viewport height */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  text-align: center;
+  color: white; /* Keeps text color unchanged */
+  overflow: hidden; /* Prevent content from overflowing background */
+}
+
+.contact-page::before {
+  content: "";
+  position: fixed; /* Fixed position to cover viewport */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/assets/rocky-mountain-park.jpg'); /* Background image */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  opacity: 0.6; /* Adjust opacity here */
+  z-index: -1; /* Places it behind the content */
+}
+
+.contact-page h1,
+.contact-page p,
+.contact-page button {
+  text-align: center;
+}
