@@ -6,8 +6,8 @@ const Skills = () => {
   return (
     <div className='skills-page'>
       <h1>Skills</h1>
-      <p>Here are my Skills.</p>
       <NavigationBar />
+      <p>Here are my Skills.</p>
     </div>
   );
 };

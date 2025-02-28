@@ -1,33 +1,68 @@
 .intro-page {
-  position: relative; /* Needed for absolute positioning of ::before */
-  height: 100vh; /* Ensure full viewport height */
+  position: relative;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  align-items: center; /* Center horizontally */
   padding: 20px;
   text-align: center;
-  color: white; /* Keeps text color unchanged */
-  overflow: hidden; /* Prevent content from overflowing background */
+  color: white;
+  overflow: hidden;
 }
 
 .intro-page::before {
   content: "";
-  position: fixed; /* Fixed position to cover viewport */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/rocky-mountain-park.jpg'); /* Background image */
+  background-image: url('/assets/rocky-mountain-park.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  opacity: 0.6; /* Adjust opacity here */
-  z-index: -1; /* Places it behind the content */
+  opacity: 0.6;
+  z-index: -1;
 }
 
-.intro-page h1,
-.intro-page p,
-.intro-page button {
+.intro-page h1 {
   text-align: center;
+  margin-bottom: 20px;
+}
+
+.intro-page p {
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: left; /* Left align text within paragraph box */
+  margin-top: 20px;
+  max-width: 700px; /* Set maximum width for paragraph box */
+  margin-left: auto; /* Center the box horizontally */
+  margin-right: auto; /* Center the box horizontally */
+}
+
+/* Navigation Buttons Styling */
+.intro-page > div { /* Targeting NavigationBar div directly */
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.intro-page > div button { /* Styling buttons within NavigationBar */
+  padding: 10px 20px;
+  border: 2px solid white;
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  margin: 0 10px;
+  background-color: darkgray; /* Default button color */
+  font-family: sans-serif;
+  font-weight: bold;
+}
+
+.intro-page > div button:hover {
+  background-color: green;
+  border-color: white;
 }
