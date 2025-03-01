@@ -15,7 +15,7 @@ const Intro = () => {
           <br/><br/>
           In my free time, I like to hang out with friends, watch movies, and experiment with photography.
           <br/><br/><br/><br/>
-          <img src="/assets/Srinesh.jpg" alt="Srinesh 2023" style={{ width: '400px', height: 'auto', marginLeft: '5px', marginBottom: '5px', verticalAlign: 'middle' }} />
+          <img src="/assets/Srinesh.jpg" alt="Srinesh 2023" style={{ display: 'flex', width: '27vw', height: 'auto', marginLeft: 'auto', marginRight: 'auto', marginBottom: '5px', verticalAlign: 'middle' }} />
       </p>
     </div>
   );

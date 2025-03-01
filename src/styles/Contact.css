@@ -7,7 +7,7 @@
   padding: 20px;
   text-align: center;
   color: white;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 .contact-page::before {
@@ -28,34 +28,37 @@
 .contact-page h1 {
   text-align: center;
   margin-bottom: 20px;
+  font-size: 36px; /* Reverted to original pixel font size for h1 */
 }
 
 .contact-page p {
-  background-color: rgba(0, 0, 0, 0.9);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   padding: 20px;
   border-radius: 10px;
   text-align: left;
   margin-top: 20px;
-  max-width: 700px;
+  max-width: 55vw;
   margin-left: auto;
   margin-right: auto;
+  box-sizing: border-box;
+  font-size: 18px; /* Reverted to original pixel font size for p */
 }
 
 /* Style for links within the paragraph in Contact page */
 .contact-page p a {
-  color: rgb(255, 255, 255); /* Set initial link color to green */
-  text-decoration: none; /* Remove underline if you don't want it */
+  color: white;
+  text-decoration: none;
 }
 
 /* Style for visited links - keep them green */
 .contact-page p a:visited {
-  color: rgb(255, 255, 255); /* Keep visited links green */
+  color: white;
 }
 
 /* Optional: Hover effect - you can adjust this if needed */
 .contact-page p a:hover {
-  text-decoration: underline; /* Example: Add underline on hover */
+  text-decoration: underline;
 }
 
 /* Navigation Buttons Styling */
@@ -73,12 +76,32 @@
   font-size: 16px;
   cursor: pointer;
   margin: 0 10px;
+  background-color: darkgray;
   font-family: sans-serif;
   font-weight: bold;
-  background-color: darkgray;
 }
 
 .contact-page > div button:hover {
   background-color: blue;
   border-color: white;
+}
+
+/* Media Query for smaller screens (example: tablets and phones) - Font scaling with vw units */
+@media (max-width: 768px) {
+  .contact-page {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  .contact-page p {
+    padding: 15px;
+    max-width: 95%;
+    font-size: 3vw; /* Font size scales with viewport width on smaller screens */
+  }
+   .contact-page h1 {
+    font-size: 7vw; /* Font size scales with viewport width on smaller screens */
+  }
+  .contact-page > div button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
