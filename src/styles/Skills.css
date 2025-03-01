@@ -44,13 +44,13 @@
 
 /* Style for links within the paragraph in Skills page */
 .skills-page p a {
-  color: yellow; /* Set initial link color to green */
+  color: rgb(0, 255, 0); /* Set initial link color to green */
   text-decoration: none; /* Remove underline if you don't want it */
 }
 
 /* Style for visited links - keep them green */
 .skills-page p a:visited {
-  color: yellow; /* Keep visited links green */
+  color: rgb(0, 255, 0); /* Keep visited links green */
 }
 
 /* Optional: Hover effect - you can adjust this if needed */

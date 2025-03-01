@@ -44,7 +44,7 @@
 
 /* Style for links within the paragraph in Contact page */
 .contact-page p a {
-  color: green; /* Set initial link color to green */
+  color: rgb(255, 255, 255); /* Set initial link color to green */
   text-decoration: none; /* Remove underline if you don't want it */
 }
 
