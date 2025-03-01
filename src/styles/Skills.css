@@ -3,7 +3,7 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center horizontally */
+  align-items: center;
   padding: 20px;
   text-align: center;
   color: white;
@@ -35,11 +35,27 @@
   color: white;
   padding: 20px;
   border-radius: 10px;
-  text-align: left; /* Left align text within paragraph box */
+  text-align: left;
   margin-top: 20px;
-  max-width: 700px; /* Set maximum width for paragraph box */
-  margin-left: auto; /* Center the box horizontally */
-  margin-right: auto; /* Center the box horizontally */
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Style for links within the paragraph in Skills page */
+.skills-page p a {
+  color: yellow; /* Set initial link color to green */
+  text-decoration: none; /* Remove underline if you don't want it */
+}
+
+/* Style for visited links - keep them green */
+.skills-page p a:visited {
+  color: yellow; /* Keep visited links green */
+}
+
+/* Optional: Hover effect - you can adjust this if needed */
+.skills-page p a:hover {
+  text-decoration: underline; /* Example: Add underline on hover */
 }
 
 /* Navigation Buttons Styling */
@@ -57,9 +73,9 @@
   font-size: 16px;
   cursor: pointer;
   margin: 0 10px;
-  background-color: darkgray; /* Default button color */
   font-family: sans-serif;
   font-weight: bold;
+  background-color: darkgray;
 }
 
 .skills-page > div button:hover {
