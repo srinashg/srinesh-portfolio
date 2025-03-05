@@ -4,7 +4,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  /* background-color: #f0f0f0; Removed background color from homepage */
   overflow: hidden;
 }
 
@@ -25,46 +24,43 @@
 
 .simon-circle {
   position: relative;
-  width: 500px;
-  height: 500px;
+  width: min(90vw, 500px);
+  height: min(90vw, 500px);
   border-radius: 50%;
   overflow: hidden;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid black; /* Black border around the entire simon-circle */
+  border: 5px solid black;
   box-sizing: border-box;
-  background-color: transparent; /* Make simon-circle background transparent */
+  background-color: transparent;
 }
 
-/* Black Separators using pseudo-elements - Pixel-Perfect Gap Elimination */
+/* Black Separators */
 .simon-circle::before,
 .simon-circle::after {
   content: '';
   position: absolute;
   background-color: black;
-  z-index: 1; /* Ensure separators are above quadrants */
+  z-index: 1;
 }
 
-/* Vertical Separator - Precise Pixel Values for No Gaps */
 .simon-circle::before {
-  width: 9px; /* Slightly wider vertical separator for full coverage */
-  height: 509px; /* Adjusted height for top/bottom border overlap */
-  top: -4px; /* Fine-tuned top offset to eliminate top gap */
+  width: 9px;
+  height: 100%;
+  top: 0;
   left: 50%;
-  transform: translateX(-50%); /* Center vertically */
+  transform: translateX(-50%);
 }
 
-/* Horizontal Separator - Precise Pixel Values for No Gaps */
 .simon-circle::after {
-  height: 9px; /* Slightly taller horizontal separator for full coverage */
-  width: 509px; /* Adjusted width for left/right border overlap */
-  left: -4px; /* Fine-tuned left offset to eliminate left gap */
+  height: 9px;
+  width: 100%;
+  left: 0;
   top: 50%;
-  transform: translateY(-50%); /* Center horizontally */
+  transform: translateY(-50%);
 }
-
 
 /* Center Circle Styling */
 .simon-circle .center-circle {
@@ -72,8 +68,8 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 240px;
-  height: 240px;
+  width: 48%;
+  height: 48%;
   background-color: black;
   border-radius: 50%;
   color: white;
@@ -81,15 +77,15 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  z-index: 2; /* Ensure center circle is above separators and quadrants */
+  z-index: 2;
 }
 
 .simon-circle .power-button {
   background-color: gray;
   border: none;
   border-radius: 20px;
-  width: 80px;
-  height: 40px;
+  width: 30%;
+  height: 15%;
   cursor: pointer;
   display: flex;
   justify-content: center;
@@ -102,7 +98,7 @@
 }
 
 .simon-circle .power-button-playing {
-  background-color: #39FF14; /* Bright uranium green when playing */
+  background-color: #39FF14;
 }
 
 .simon-circle .center-text {
@@ -110,21 +106,18 @@
   text-align: center;
 }
 
-/* Quadrant Styling - No Borders, Adjusted Size and Positioning */
+/* Quadrant Styling */
 .simon-circle .quadrant {
   position: absolute;
-  width: 49%; /* Slightly larger quadrants now that separators are separate elements */
-  height: 49%; /* Slightly larger quadrants now that separators are separate elements */
+  width: 50%;
+  height: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-user-select: none;
-  -ms-user-select: none;
   user-select: none;
-  z-index: 0; /* Quadrants behind separators and center circle */
-  border: none; /* Removed quadrant borders */
+  z-index: 0;
+  border: none;
   box-sizing: border-box;
   flex-direction: column;
 }
@@ -137,13 +130,12 @@
   padding: 10px;
 }
 
-/* Quadrant Positioning and Colors - Adjusted for Separators */
+/* Quadrant Colors & Positioning */
 .simon-circle .quadrant-intro {
   top: 0;
   left: 0;
   background-color: rgb(0, 136, 0);
   border-radius: 50% 0 0 0;
-  transform: translate(0%, 0%); /* Reset transform */
 }
 
 .simon-circle .quadrant-work {
@@ -151,7 +143,6 @@
   right: 0;
   background-color: rgb(137, 0, 0);
   border-radius: 0 50% 0 0;
-  transform: translate(0%, 0%); /* Reset transform */
 }
 
 .simon-circle .quadrant-skills {
@@ -159,7 +150,6 @@
   left: 0;
   background-color: rgb(140, 140, 0);
   border-radius: 0 0 0 50%;
-  transform: translate(0%, 0%); /* Reset transform */
 }
 
 .simon-circle .quadrant-contact {
@@ -167,10 +157,9 @@
   right: 0;
   background-color: rgb(0, 84, 132);
   border-radius: 0 0 50% 0;
-  transform: translate(0%, 0%); /* Reset transform */
 }
 
-/* Hover effects for quadrants */
+/* Quadrant Hover Effects */
 .simon-circle .quadrant-intro:hover {
   background-color: rgb(0, 255, 0);
 }
@@ -185,4 +174,43 @@
 
 .simon-circle .quadrant-contact:hover {
   background-color: rgb(0, 162, 255);
+}
+
+/* Responsive Styling */
+@media screen and (max-width: 768px) {
+  .simon-circle {
+    width: min(90vw, 400px);
+    height: min(90vw, 400px);
+  }
+  
+  .simon-circle .center-circle {
+    width: 45%;
+    height: 45%;
+  }
+  
+  .simon-circle .center-text {
+    font-size: 85%;
+    text-align: center;
+  }
+
+  .simon-circle .power-button {
+    background-color: gray;
+    border: none;
+    border-radius: 20px;
+    width: 30%;
+    height: 15%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 70%;
+    text-transform: uppercase;
+  }
+
+  .simon-circle .quadrant-text {
+    font-size: 100%;
+  }
 }
