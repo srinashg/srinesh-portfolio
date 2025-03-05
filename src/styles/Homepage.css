@@ -1,78 +1,188 @@
-.homepage-container {
-  position: relative; /* Needed for absolute positioning of ::before */
+.homepage {
+  position: relative;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh; /* Ensure full viewport height */
-  overflow: hidden; /* Prevent content from overflowing background */
+  /* background-color: #f0f0f0; Removed background color from homepage */
+  overflow: hidden;
 }
 
-.homepage-container::before {
+.homepage::before {
   content: "";
-  position: fixed; /* Fixed position to cover viewport */
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-image: url('/assets/canyon-dusk.jpg'); /* Background image for homepage */
+  background-image: url('/assets/canyon-dusk.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
-  opacity: 0.6; /* Adjust opacity here */
-  z-index: -1; /* Places it behind the content */
+  opacity: 0.6;
+  z-index: -1;
 }
 
-.simon-container {
-  position: relative; /* For positioning center text */
-  width: 455px;
-  height: 455px;
+.simon-circle {
+  position: relative;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid black; /* Black border around the entire simon-circle */
+  box-sizing: border-box;
+  background-color: transparent; /* Make simon-circle background transparent */
 }
 
-.center-text {
+/* Black Separators using pseudo-elements - Pixel-Perfect Gap Elimination */
+.simon-circle::before,
+.simon-circle::after {
+  content: '';
+  position: absolute;
+  background-color: black;
+  z-index: 1; /* Ensure separators are above quadrants */
+}
+
+/* Vertical Separator - Precise Pixel Values for No Gaps */
+.simon-circle::before {
+  width: 9px; /* Slightly wider vertical separator for full coverage */
+  height: 509px; /* Adjusted height for top/bottom border overlap */
+  top: -4px; /* Fine-tuned top offset to eliminate top gap */
+  left: 50%;
+  transform: translateX(-50%); /* Center vertically */
+}
+
+/* Horizontal Separator - Precise Pixel Values for No Gaps */
+.simon-circle::after {
+  height: 9px; /* Slightly taller horizontal separator for full coverage */
+  width: 509px; /* Adjusted width for left/right border overlap */
+  left: -4px; /* Fine-tuned left offset to eliminate left gap */
+  top: 50%;
+  transform: translateY(-50%); /* Center horizontally */
+}
+
+
+/* Center Circle Styling */
+.simon-circle .center-circle {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  color: white; /* Text color - adjust if needed */
-  text-align: center;
-  user-select: none;
-  background-color: black; /* Black box opacity set to 100% */
-  padding: 20px 32.5px;
-  border-radius: 10px;
-  line-height: 1.2;
+  width: 240px;
+  height: 240px;
+  background-color: black;
+  border-radius: 50%;
+  color: white;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: center;
+  z-index: 2; /* Ensure center circle is above separators and quadrants */
 }
 
-.center-text div:first-child {
-  font-size: 31px;
+.simon-circle .power-button {
+  background-color: gray;
+  border: none;
+  border-radius: 20px;
+  width: 80px;
+  height: 40px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10px;
+  color: white;
   font-weight: bold;
-  white-space: nowrap;
-  margin-bottom: 5px;
+  font-size: 1.1em;
+  text-transform: uppercase;
 }
 
-.center-text div:last-child {
-  font-size: 18px;
-  white-space: nowrap;
-  margin-top: 0;
+.simon-circle .power-button-playing {
+  background-color: #39FF14; /* Bright uranium green when playing */
 }
 
-@media (max-width: 767px) { /* Mobile styles */
-  .simon-container {
-    width: 90vw;
-    height: 90vw;
-  }
+.simon-circle .center-text {
+  font-size: 2.1em;
+  text-align: center;
+}
 
-  .center-text {
-    padding: 13px 20px;
-  }
+/* Quadrant Styling - No Borders, Adjusted Size and Positioning */
+.simon-circle .quadrant {
+  position: absolute;
+  width: 49%; /* Slightly larger quadrants now that separators are separate elements */
+  height: 49%; /* Slightly larger quadrants now that separators are separate elements */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  z-index: 0; /* Quadrants behind separators and center circle */
+  border: none; /* Removed quadrant borders */
+  box-sizing: border-box;
+  flex-direction: column;
+}
 
-  .center-text div:first-child {
-    font-size: 26px;
-  }
+.simon-circle .quadrant-text {
+  color: white;
+  font-size: 1.5em;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+  text-align: center;
+  padding: 10px;
+}
 
-  .center-text div:last-child {
-    font-size: 15px;
-  }
+/* Quadrant Positioning and Colors - Adjusted for Separators */
+.simon-circle .quadrant-intro {
+  top: 0;
+  left: 0;
+  background-color: rgb(0, 136, 0);
+  border-radius: 50% 0 0 0;
+  transform: translate(0%, 0%); /* Reset transform */
+}
+
+.simon-circle .quadrant-work {
+  top: 0;
+  right: 0;
+  background-color: rgb(137, 0, 0);
+  border-radius: 0 50% 0 0;
+  transform: translate(0%, 0%); /* Reset transform */
+}
+
+.simon-circle .quadrant-skills {
+  bottom: 0;
+  left: 0;
+  background-color: rgb(140, 140, 0);
+  border-radius: 0 0 0 50%;
+  transform: translate(0%, 0%); /* Reset transform */
+}
+
+.simon-circle .quadrant-contact {
+  bottom: 0;
+  right: 0;
+  background-color: rgb(0, 84, 132);
+  border-radius: 0 0 50% 0;
+  transform: translate(0%, 0%); /* Reset transform */
+}
+
+/* Hover effects for quadrants */
+.simon-circle .quadrant-intro:hover {
+  background-color: rgb(0, 255, 0);
+}
+
+.simon-circle .quadrant-work:hover {
+  background-color: red;
+}
+
+.simon-circle .quadrant-skills:hover {
+  background-color: yellow;
+}
+
+.simon-circle .quadrant-contact:hover {
+  background-color: rgb(0, 162, 255);
 }
