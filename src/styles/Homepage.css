@@ -213,4 +213,8 @@
   .simon-circle .quadrant-text {
     font-size: 100%;
   }
+
+  .simon-circle .power-button-playing {
+    background-color: #39FF14;
+  }
 }
