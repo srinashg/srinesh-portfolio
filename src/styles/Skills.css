@@ -28,7 +28,7 @@
 .skills-page h1 {
   text-align: center;
   margin-bottom: 20px;
-  font-size: 36px; /* Reverted to original pixel font size for h1 */
+  font-size: 36px;
 }
 
 .skills-page p {
@@ -42,51 +42,56 @@
   margin-left: auto;
   margin-right: auto;
   box-sizing: border-box;
-  font-size: 18px; /* Reverted to original pixel font size for p */
+  font-size: 18px;
 }
 
 /* Style for links within the paragraph in Skills page */
 .skills-page p a {
-  color: rgb(0, 255, 0); /* Set initial link color to green */
-  text-decoration: none; /* Remove underline if you don't want it */
+  color: rgb(255, 255, 0);
+  text-decoration: none;
 }
 
 /* Style for visited links - keep them green */
 .skills-page p a:visited {
-  color: rgb(0, 255, 0); /* Keep visited links green */
+  color: rgb(255, 255, 0);
 }
 
 /* Optional: Hover effect - you can adjust this if needed */
 .skills-page p a:hover {
-  text-decoration: underline; /* Example: Add underline on hover */
+  text-decoration: underline;
 }
 
 /* Navigation Buttons Styling */
-.skills-page > div { /* Targeting NavigationBar div directly */
+.skills-page > div {
   display: flex;
   justify-content: center;
   margin-bottom: 20px;
 }
 
-.skills-page > div button { /* Styling buttons within NavigationBar */
+.skills-page > div button {
   padding: 10px 20px;
-  border: 2px solid white;
+  border: 2px solid rgb(140, 140, 0);
   border-radius: 50px;
   color: white;
   font-size: 16px;
   cursor: pointer;
   margin: 0 10px;
-  background-color: darkgray;
+  background-color: rgb(140, 140, 0);
   font-family: sans-serif;
-  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .skills-page > div button:hover {
   background-color: yellow;
-  border-color: white;
+  border-color: yellow;
 }
 
-/* Media Query for smaller screens (example: tablets and phones) - Font scaling with vw units */
+/* Different colors for each project section */
+.skills-page .project {
+  background-color: rgba(140, 140, 0, 0.6);
+}
+
+/* Media Query for smaller screens */
 @media (max-width: 768px) {
   .skills-page {
     padding-left: 10px;
@@ -95,10 +100,10 @@
   .skills-page p {
     padding: 15px;
     max-width: 95%;
-    font-size: 3vw; /* Font size scales with viewport width on smaller screens */
+    font-size: 3vw;
   }
-   .skills-page h1 {
-    font-size: 7vw; /* Font size scales with viewport width on smaller screens */
+  .skills-page h1 {
+    font-size: 7vw;
   }
   .skills-page > div button {
     padding: 8px 16px;

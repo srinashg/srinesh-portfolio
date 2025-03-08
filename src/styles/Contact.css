@@ -70,20 +70,24 @@
 
 .contact-page > div button { /* Styling buttons within NavigationBar */
   padding: 10px 20px;
-  border: 2px solid white;
+  border: 2px solid rgb(0, 84, 132);
   border-radius: 50px;
   color: white;
   font-size: 16px;
   cursor: pointer;
   margin: 0 10px;
-  background-color: darkgray;
+  background-color: rgb(0, 84, 132);
   font-family: sans-serif;
-  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
 }
 
 .contact-page > div button:hover {
-  background-color: blue;
-  border-color: white;
+  background-color: rgb(0, 162, 255);
+  border-color: rgb(0, 162, 255);
+}
+
+.contact-page .contact {
+  background-color: rgba(0, 84, 132, 0.6);
 }
 
 /* Media Query for smaller screens (example: tablets and phones) - Font scaling with vw units */
