@@ -28,11 +28,11 @@
   height: min(90vw, 500px);
   border-radius: 50%;
   overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 5px solid black;
+  border: 20px solid black;
   box-sizing: border-box;
   background-color: transparent;
 }
@@ -43,6 +43,7 @@
   content: '';
   position: absolute;
   background-color: black;
+  border: 10px solid black;
   z-index: 1;
 }
 
@@ -93,7 +94,7 @@
   margin-bottom: 10px;
   color: white;
   font-weight: bold;
-  font-size: 1.1em;
+  font-size: 1.0em;
   text-transform: uppercase;
 }
 
@@ -102,7 +103,7 @@
 }
 
 .simon-circle .center-text {
-  font-size: 2.1em;
+  font-size: 2.0em;
   text-align: center;
 }
 
@@ -189,7 +190,7 @@
   }
   
   .simon-circle .center-text {
-    font-size: 85%;
+    font-size: 75%;
     text-align: center;
   }
 
@@ -206,7 +207,7 @@
     margin-bottom: 10px;
     color: white;
     font-weight: bold;
-    font-size: 70%;
+    font-size: 60%;
     text-transform: uppercase;
   }
 
